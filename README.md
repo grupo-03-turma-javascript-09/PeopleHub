@@ -35,7 +35,8 @@ A API do PeopleHub expõe os seguintes endpoints:
 
 - **POST /colaboradores** → Cadastra um novo colaborador.  
 - **GET /colaboradores** → Retorna a lista de colaboradores.  
-- **GET /colaboradores/{id}** → Retorna os dados de um colaborador específico.  
+- **GET /colaboradores/{id}** → Retorna os dados de um colaborador específico.
+- **GET /colaboradores/nome/{nome}** → Retorna os dados de todos os colaboradores que contém o nome passado.
 - **PUT /colaboradores/{id}** → Atualiza as informações de um colaborador existente.  
 - **DELETE /colaboradores/{id}** → Remove um colaborador do sistema.  
 
@@ -63,4 +64,5 @@ npm install
 ```bash
 npm run start:dev
 ```
+
 
