@@ -1,14 +1,14 @@
 import { Controller, Get, HttpCode, HttpStatus } from '@nestjs/common';
-import { Colaborador } from '../entities/colaborador.entity';
-import { ColaboradorService } from '../services/colaboradores.service';
+import { Colaborador } from '../entitties/colaborador.entity';
+import { ColaboradorService } from '../services/colaborador.serivce';
 
-@Controller('/colaborador')
-export class ColaboladoresController {
-  constructor(private readonly colaboradoresService: ColaboradoService) {}
+@Controller('/colaboradores')
+export class ColaboradorController {
+  constructor(private readonly colaboradorService: ColaboradorService) {}
 
   @Get()
   @HttpCode(HttpStatus.ok)
-  findAll(): Premise<Colaborador[]> {
-    return this.colaboradoresService.findAll();
+  findAll(): Promise<Colaborador[]> {
+    return this.colaboradorService.findAll();
   }
 }
