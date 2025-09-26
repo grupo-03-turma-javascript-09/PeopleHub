@@ -7,7 +7,7 @@ export class ColaboradorController {
   constructor(private readonly colaboradorService: ColaboradorService) {}
 
   @Get()
-  @HttpCode(HttpStatus.ok)
+  @HttpCode(HttpStatus.OK)
   findAll(): Promise<Colaborador[]> {
     return this.colaboradorService.findAll();
   }
