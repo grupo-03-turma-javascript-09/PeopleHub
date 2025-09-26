@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
   HttpCode,
   HttpStatus,
@@ -8,7 +9,6 @@ import {
   ParseIntPipe,
   Post,
   Put,
-  Delete,
 } from '@nestjs/common';
 import { Colaborador } from '../entitties/colaborador.entity';
 import { ColaboradorService } from '../services/colaborador.serivce';
@@ -26,13 +26,13 @@ export class ColaboradorController {
   @Get('/:id')
   @HttpCode(HttpStatus.OK)
   findById(@Param('id', ParseIntPipe) id: number): Promise<Colaborador> {
-    return this.ColaboradorService.findById(id);
+    return this.colaboradorService.findById(id);
   }
 
   @Get('/nome/:nome')
   @HttpCode(HttpStatus.OK)
   findByNome(@Param('nome') nome: string): Promise<Colaborador[]> {
-    return this.colaboradorService.findAllByNome(nome);
+    return this.colaboradorService.findByNome(nome);
   }
 
   @Post()
@@ -42,7 +42,7 @@ export class ColaboradorController {
   }
 
   @Put()
-  @HttpCode(HttpStatus.Ok)
+  @HttpCode(HttpStatus.OK)
   update(@Body() colaborador: Colaborador): Promise<Colaborador> {
     return this.colaboradorService.update(colaborador);
   }
