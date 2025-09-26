@@ -18,6 +18,6 @@ export class Colaborador {
     @Column({ type: 'date', nullable: false })
     data_nasc: Date
 
-    @UpdateDateColumn()
+    @Column({type: 'date', nullable: false})
     data_admissao: Date
 }
