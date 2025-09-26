@@ -53,9 +53,14 @@ A API do PeopleHub expõe os seguintes endpoints:
 
 ## Como Executar o Projeto  
 
-```bash
-# Instalar dependências
-npm install
 
-# Executar em modo desenvolvimento
+### Instalar dependências
+```bash
+npm install
+```
+
+#### Executar em modo desenvolvimento
+```bash
 npm run start:dev
+```
+
