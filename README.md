@@ -25,8 +25,7 @@ O **PeopleHub** é um **Cadastro Básico de Funcionários**, com foco na **Gest�
 A principal entidade do sistema é o **Colaborador**.  
 Abaixo, apresentamos o **Diagrama Entidade-Relacionamento (DER)** que orienta a modelagem dos dados:  
 
-![DER - Colaborador](https://github.com/grupo-03-turma-javascript-09/PeopleHub/blob/7c32558a1d8bcda50d6b6e4db1476be4843eebbc/img/Diagrama%20Der.png)  
-
+![DER - Colaborador](https://github.com/grupo-03-turma-javascript-09/PeopleHub/blob/cf3b4e2b37918b0089722e14c05b9d1ba69883b8/img/Diagrama_der.png)
 ---
 
 ## Métodos da API  
