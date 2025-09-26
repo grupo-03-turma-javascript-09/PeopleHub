@@ -1,4 +1,15 @@
-import { Controller, Get, HttpCode, HttpStatus } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Param,
+  ParseIntPipe,
+  Post,
+  Put,
+  Delete,
+} from '@nestjs/common';
 import { Colaborador } from '../entitties/colaborador.entity';
 import { ColaboradorService } from '../services/colaborador.serivce';
 
@@ -10,5 +21,35 @@ export class ColaboradorController {
   @HttpCode(HttpStatus.OK)
   findAll(): Promise<Colaborador[]> {
     return this.colaboradorService.findAll();
+  }
+
+  @Get('/:id')
+  @HttpCode(HttpStatus.OK)
+  findById(@Param('id', ParseIntPipe) id: number): Promise<Colaborador> {
+    return this.ColaboradorService.findById(id);
+  }
+
+  @Get('/nome/:nome')
+  @HttpCode(HttpStatus.OK)
+  findByNome(@Param('nome') nome: string): Promise<Colaborador[]> {
+    return this.colaboradorService.findAllByNome(nome);
+  }
+
+  @Post()
+  @HttpCode(HttpStatus.CREATED)
+  create(@Body() colaborador: Colaborador): Promise<Colaborador> {
+    return this.colaboradorService.create(colaborador);
+  }
+
+  @Put()
+  @HttpCode(HttpStatus.Ok)
+  update(@Body() colaborador: Colaborador): Promise<Colaborador> {
+    return this.colaboradorService.update(colaborador);
+  }
+
+  @Delete('/:id')
+  @HttpCode(HttpStatus.NO_CONTENT)
+  delete(@Param('id', ParseIntPipe) id: number) {
+    return this.colaboradorService.delete(id);
   }
 }
